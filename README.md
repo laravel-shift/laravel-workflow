@@ -23,7 +23,8 @@ composer require zerodahero/laravel-workflow
 | ^2.0 | 5.x |
 | ^3.0 | 7.x |
 | ^3.2 | 8.x |
-| ^4.0 | 9.x |
+| ^4.0 | 9.x, 10.x |
+| ^5.0 | 11.x |
 
 ## Upgrade from v3 to v4
 
