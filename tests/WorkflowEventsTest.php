@@ -162,7 +162,7 @@ class WorkflowEventsTest extends BaseWorkflowTestCase
         $this->assertEventSetDispatched('announce', 't1', in_array('announce', $eventsToExpect));
     }
 
-    public function providesEventsToDispatchScenarios()
+    public static function providesEventsToDispatchScenarios()
     {
         $events = [
             'enter' => WorkflowEvents::ENTER,
@@ -219,23 +219,23 @@ class WorkflowEventsTest extends BaseWorkflowTestCase
         $workflow->apply($object, 't1', $context);
 
         // Symfony Workflow 4.2.9 fires entered event on initialize
-        Event::assertDispatched(function (EnteredEvent $event) use ($context) {
-            return $event->getContext() == $context;
+        Event::assertDispatched(function (EnteredEvent $event) use ($object) {
+            return $event->getSubject() == $object;
         });
-        Event::assertDispatched(function (LeaveEvent $event) use ($context) {
-            return $event->getContext() == $context;
+        Event::assertDispatched(function (LeaveEvent $event) use ($object) {
+            return $event->getSubject() == $object;
         });
-        Event::assertDispatched(function (TransitionEvent $event) use ($context) {
-            return $event->getContext() == $context;
+        Event::assertDispatched(function (TransitionEvent $event) use ($object) {
+            return $event->getSubject() == $object;
         });
-        Event::assertDispatched(function (EnterEvent $event) use ($context) {
-            return $event->getContext() == $context;
+        Event::assertDispatched(function (EnterEvent $event) use ($object) {
+            return $event->getSubject() == $object;
         });
-        Event::assertDispatched(function (CompletedEvent $event) use ($context) {
-            return $event->getContext() == $context;
+        Event::assertDispatched(function (CompletedEvent $event) use ($object) {
+            return $event->getSubject() == $object;
         });
-        Event::assertDispatched(function (AnnounceEvent $event) use ($context) {
-            return $event->getContext() == $context;
+        Event::assertDispatched(function (AnnounceEvent $event) use ($object) {
+            return $event->getSubject() == $object;
         });
     }
 

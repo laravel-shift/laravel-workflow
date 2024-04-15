@@ -48,7 +48,7 @@ trait CanAccessProtected
      *
      * @return mixed Property value
      */
-    public function getProtectedConstant(&$object, $constantName)
+    public static function getProtectedConstant(&$object, $constantName)
     {
         return (new ReflectionClass($object))->getConstant($constantName);
     }

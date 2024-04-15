@@ -397,7 +397,7 @@ class WorkflowRegistryTest extends BaseWorkflowTestCase
         $this->assertEquals($expectSingleState, $this->getProtectedProperty($markingStore, 'singleState'));
     }
 
-    public function providesAutomaticMarkingStoreScenarios()
+    public static function providesAutomaticMarkingStoreScenarios()
     {
         return [
             'default workflow, default multi' => [[], false],
