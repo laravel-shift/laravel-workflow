@@ -41,7 +41,7 @@ class EloquentMarkingStoreTest extends TestCase
         $this->assertEquals([$newMarking => 1], $setMarking->getPlaces());
     }
 
-    public function providesSubjects()
+    public static function providesSubjects()
     {
         return [
             [new TestModel()],
@@ -95,7 +95,7 @@ class EloquentMarkingStoreTest extends TestCase
         $this->assertEquals([$expectedMarkingKey => 1], $marking->getPlaces());
     }
 
-    public function providesTypeSafeScenarios()
+    public static function providesTypeSafeScenarios()
     {
         return [
             [0, '0'],

@@ -43,8 +43,7 @@ class GuardEvent extends BaseEvent
             $this->getSubject(),
             $this->getMarking(),
             $this->getTransition(),
-            $this->getWorkflow(),
-            $this->getContext()
+            $this->getWorkflow()
         );
     }
 
@@ -57,8 +56,7 @@ class GuardEvent extends BaseEvent
             $symfonyEvent->getSubject(),
             $symfonyEvent->getMarking(),
             $symfonyEvent->getTransition(),
-            $symfonyEvent->getWorkflow(),
-            $symfonyEvent->getContext()
+            $symfonyEvent->getWorkflow()
         );
 
         $instance->symfonyProxyEvent = $symfonyEvent;
