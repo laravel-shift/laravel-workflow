@@ -69,12 +69,12 @@ class DispatchAdapterTest extends TestCase
         $this->assertInstanceOf(BaseEvent::class, $event);
     }
 
-    public function providesEventScenarios()
+    public static function providesEventScenarios()
     {
         $faker = \Faker\Factory::create();
 
         $dispatcher = new DispatcherAdapter(Mockery::mock(Dispatcher::class));
-        $eventList = $this->getProtectedConstant($dispatcher, 'EVENT_MAP');
+        $eventList = static::getProtectedConstant($dispatcher, 'EVENT_MAP');
         $mockWorkflow = Mockery::mock(WorkflowInterface::class);
 
         $reverseMap = [
